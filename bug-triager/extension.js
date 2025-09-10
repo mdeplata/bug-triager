@@ -42,17 +42,51 @@ function activate(context) {
 	context.subscriptions.push(dashboardCommand);
 }
 
-//helper function
-  function getWebviewContent() {
+//WEBVIEW display function
+  function getWebviewContent(panel,context) {
+	const stylePath = vscode.Uri.file(
+		path.join(context.extensionPath, "media","style.css")
+	);
+	const styleUri = panel.webview.asWebviewUri(stylePath);
+
+	const scriptPath = vscode.Uri.file(
+		path.join(context.extensionPath,"media","main.js")
+	);
+
+	const scriptUri = panel.webview.asWebviewUri(scriptPath);
 	return `<!DOCTYPE html>
-	<html>
+	<html lang="en">
   	<head>
     <meta charset="UTF-8">
     <title>Bug Triager Dashboard</title>
+	<link rel= "stylesheet" href="${styleUri}">
   </head>
-  <body style="font-family: sans-serif; padding: 20px;">
-    <h1>Bug Triager Dashboard</h1>
-    <p>This is the starting point for your UI 💃🏾</p>
+  	<body>
+	 <div class="sidebar">
+	  <button id="historyBtn" class="active">History</button>
+	  <button id="analyzeBtn">Analyze</button>
+	  <button id="settingBtn">Settings</button>
+	 </div>
+
+	 <div class= "content">
+	 	
+	 	<div id="historyPanel" class=""panel active">
+			<h2>History</h2>
+			<p>This will show past errors.</p>
+		</div>
+
+	 	<div id="analyzePanel" class=""panel">
+			<h2>Analyze</h2>
+			<p>Paste a stack trace here</p>
+		</div>		
+
+	 	<div id="settingsPanel" class=""panel">
+			<h2>Settings</h2>
+			<p>settings Config</p>
+		</div>		
+	 </div>
+
+ 	 <script src="${scriptUri}"></script> 
   </body>
  </html>`;
 }
