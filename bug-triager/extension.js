@@ -23,8 +23,38 @@ function activate(context) {
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from bug-triager!');
 	});
-
 	context.subscriptions.push(disposable);
+
+	//new dashboard command
+	 const dashboardCommand = vscode.commands.registerCommand(
+		'bug-triager.openDashboard',
+		function () {
+			const panel = vscode.window.createWebviewPanel(
+				'bugTriagerDashboard',
+				'Bug Triager Dashboard',
+				vscode.ViewColumn.One,
+				{ enableScripts: true }
+			);
+
+			panel.webview.html = getWebviewContent();
+		}
+	);
+	context.subscriptions.push(dashboardCommand);
+}
+
+//helper function
+  function getWebviewContent() {
+	return `<!DOCTYPE html>
+	<html>
+  	<head>
+    <meta charset="UTF-8">
+    <title>Bug Triager Dashboard</title>
+  </head>
+  <body style="font-family: sans-serif; padding: 20px;">
+    <h1>Bug Triager Dashboard</h1>
+    <p>This is the starting point for your UI 💃🏾</p>
+  </body>
+ </html>`;
 }
 
 // This method is called when your extension is deactivated
