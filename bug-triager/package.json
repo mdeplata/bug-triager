@@ -12,10 +12,16 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
+    "commands": [
+    {
       "command": "bug-triager.helloWorld",
       "title": "Hello World"
-    }]
+    },
+    {
+      "command": "bug-triager.openDashboard",
+      "title": "Bug Triager: Open Dashboard"
+    }
+  ]
   },
   "scripts": {
     "lint": "eslint .",

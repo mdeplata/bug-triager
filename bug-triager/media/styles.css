@@ -1,0 +1,41 @@
+body{
+    margin:0;
+    font-family: sans-serif;
+    display: flex;
+    height: 100vh;
+    border:1px solid #92989d;
+    background: #1e1e1e;
+
+
+}
+
+.sidebar{
+    width: 200px;
+    background: #1a2434;
+    color: #92989d;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar button{
+    background: none;
+    border: none;
+    color:inherit;
+    padding:10px;
+    text-align: left;
+    cursor: pointer;
+}
+.sidebar button.active{
+    background: #163067;
+}   
+.content{
+    flex: 1;
+    padding: 20px;
+}
+
+.panel{
+    display: none;
+}
+.panel.active{
+    display: block;
+}
