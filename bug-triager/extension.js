@@ -64,6 +64,7 @@ function activate(context) {
   </head>
   	<body>
 	 <div class="sidebar">
+	  <h2>DASHBOARD</h2>
 	  <button id="historyBtn" class="active">History</button>
 	  <button id="analyzeBtn">Analyze</button>
 	  <button id="settingBtn">Settings</button>
@@ -71,17 +72,17 @@ function activate(context) {
 
 	 <div class= "content">
 	 	
-	 	<div id="historyPanel" class=""panel active">
+	 	<div id="historyPanel" class="panel active">
 			<h2>History</h2>
 			<p>This will show past errors.</p>
 		</div>
 
-	 	<div id="analyzePanel" class=""panel">
+	 	<div id="analyzePanel" class="panel">
 			<h2>Analyze</h2>
 			<p>Paste a stack trace here</p>
 		</div>		
 
-	 	<div id="settingsPanel" class=""panel">
+	 	<div id="settingsPanel" class="panel">
 			<h2>Settings</h2>
 			<p>settings Config</p>
 		</div>		

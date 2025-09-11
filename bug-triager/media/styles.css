@@ -3,16 +3,19 @@ body{
     font-family: sans-serif;
     display: flex;
     height: 100vh;
+    border:1px solid #92989d;
+    background: #1e1e1e;
+
+
 }
 
 .sidebar{
     width: 200px;
-    background: #1e1e1e;
-    color: white;
+    background: #1a2434;
+    color: #92989d;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    border:10px solid red;
 }
 .sidebar button{
     background: none;
@@ -23,8 +26,8 @@ body{
     cursor: pointer;
 }
 .sidebar button.active{
-    background: #333;
-}
+    background: #163067;
+}   
 .content{
     flex: 1;
     padding: 20px;
