@@ -46,7 +46,7 @@ function activate(context) {
 //WEBVIEW display function
   function getWebviewContent(panel,context) {
 	const stylePath = vscode.Uri.file(
-		path.join(context.extensionPath, "media","style.css")
+		path.join(context.extensionPath, "media","styles.css")
 	);
 	const styleUri = panel.webview.asWebviewUri(stylePath);
 

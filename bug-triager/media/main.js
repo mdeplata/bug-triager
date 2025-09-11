@@ -1,6 +1,6 @@
 const historyBtn = document.getElementById("historyBtn");
 const analyzeBtn = document.getElementById("analyzeBtn");
-const settingsBtn = document.getElementById("settingsBtn");
+const settingsBtn = document.getElementById("settingBtn");
 
 const historyPanel = document.getElementById("historyPanel");
 const analyzePanel = document.getElementById("analyzePanel");
@@ -15,9 +15,9 @@ function showPanel(panel){
 
 historyBtn.addEventListener('click',()=>{
     showPanel(historyPanel);
-    historyBtn.classList.add(active)
-    analyzeBtn.classList.add(active)
-    settingsBtn.classList.add(active)
+    historyBtn.classList.add("active")
+    analyzeBtn.classList.remove("active")
+    settingsBtn.classList.remove("active")
 })
 
 analyzeBtn.addEventListener('click', () => {

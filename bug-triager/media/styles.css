@@ -12,6 +12,7 @@ body{
     padding: 10px;
     display: flex;
     flex-direction: column;
+    border:10px solid red;
 }
 .sidebar button{
     background: none;
