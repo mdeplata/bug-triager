@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
+const path = require('path');
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -25,7 +26,7 @@ function activate(context) {
 	});
 	context.subscriptions.push(disposable);
 
-	//new dashboard command
+	// dashboard command
 	 const dashboardCommand = vscode.commands.registerCommand(
 		'bug-triager.openDashboard',
 		function () {
@@ -36,7 +37,7 @@ function activate(context) {
 				{ enableScripts: true }
 			);
 
-			panel.webview.html = getWebviewContent();
+			panel.webview.html = getWebviewContent(panel, context);
 		}
 	);
 	context.subscriptions.push(dashboardCommand);
