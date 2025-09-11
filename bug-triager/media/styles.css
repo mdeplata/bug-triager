@@ -5,10 +5,9 @@ body{
     height: 100vh;
     border:1px solid #92989d;
     background: #1e1e1e;
-
-
 }
 
+/* SIDEBAR */
 .sidebar{
     width: 200px;
     background: #1a2434;
@@ -33,16 +32,85 @@ body{
 }
 .sidebar button:hover{
     background: #1a2434;
-
 }
+
+/* PANEL CONTENT */
 .content{
     flex: 1;
     padding: 20px;
 }
-
 .panel{
     display: none;
 }
 .panel.active{
     display: block;
 }
+
+/* ANALYZE PANEL */
+
+#analyzePanel{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    color: #f8f7f7;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+}
+
+#analyzePanel h2{
+    font-size: 50px;
+    font-weight: 500;
+    color: #4d6080;
+
+}
+#analyzePanel textarea{
+    width: 55%;
+    height: 250px;
+    font-family: monospace;
+    background: #262d26;
+    color: #d7382e;
+    border-radius: 4px;
+    padding: 15px;
+    outline: #163067;
+}
+
+#analyzePanel h3{
+    font-size :35px;
+    font-weight: 500;
+    color: #92989d;
+}
+
+#analyzePanel select{
+    width: 24%;
+    padding: 14px;
+    background: #1e1e1e;
+    color:#92989d;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 15px;
+    background: #1a2434;
+    cursor: pointer;
+}
+
+#analyzePanel button{
+    width: 58%;
+    padding: 15px;
+    background: #106095;
+    color: #1a2434;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+} 
+#analyzePanel button:hover{
+    background: #0a2334;
+    color:#d1dbe3
+}
+
+
+
+
+
+
+
+
+

@@ -80,7 +80,7 @@ function activate(context) {
 
 	 	<div id="analyzePanel" class="panel">
 			<h2>Stack Trace</h2>
-			<textarea id= "stackTraceInput" placeholder="Please paste your error message here"></textarea>
+			<textarea id= "stackTraceInput" placeholder="Please paste your stack trace message here"></textarea>
 
 			<h3>Language</h3>
 		  <select id ="languageSelect">
@@ -90,7 +90,7 @@ function activate(context) {
 			<option>C++</option>
 			<option>Typescript</option>
 		  </select>
-
+			
 		  	<button id="analyzeBtn">Analyze</button>
 
 			<div id="aiResponseBox" class="hidden">
@@ -99,7 +99,7 @@ function activate(context) {
 				<div class="innerWrapper">
 					<p><b>What:</b> <span id="aiWhat">....</span></p>
 					<p><b>Why:</b> <span id="aiwhy">....</span></p>
-					<p><b>Where:</b> <span id="aiWhere>....</span></p>
+					<p><b>Where:</b> <span id="aiWhere">....</span></p>
 				</div>
 			 
 			</div>
