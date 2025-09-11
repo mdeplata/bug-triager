@@ -71,15 +71,39 @@ function activate(context) {
 	 </div>
 
 	 <div class= "content">
-	 	
+	 
 	 	<div id="historyPanel" class="panel active">
 			<h2>History</h2>
 			<p>This will show past errors.</p>
 		</div>
 
+
 	 	<div id="analyzePanel" class="panel">
-			<h2>Analyze</h2>
-			<p>Paste a stack trace here</p>
+			<h2>Stack Trace</h2>
+			<textarea id= "stackTraceInput" placeholder="Please paste your error message here"></textarea>
+
+			<h3>Language</h3>
+		  <select id ="languageSelect">
+			<option>Javascript</option>
+			<option>Python</option>
+			<option>Java</option>
+			<option>C++</option>
+			<option>Typescript</option>
+		  </select>
+
+		  	<button id="analyzeBtn">Analyze</button>
+
+			<div id="aiResponseBox" class="hidden">
+				<h3>AI Response Box</h3>
+				
+				<div class="innerWrapper">
+					<p><b>What:</b> <span id="aiWhat">....</span></p>
+					<p><b>Why:</b> <span id="aiwhy">....</span></p>
+					<p><b>Where:</b> <span id="aiWhere>....</span></p>
+				</div>
+			 
+			</div>
+
 		</div>		
 
 	 	<div id="settingsPanel" class="panel">
