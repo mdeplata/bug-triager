@@ -66,20 +66,48 @@ function activate(context) {
 	 <div class="sidebar">
 	  <h2>DASHBOARD</h2>
 	  <button id="historyBtn" class="active">History</button>
-	  <button id="analyzeBtn">Analyze</button>
-	  <button id="settingBtn">Settings</button>
+	  <button id="analyzeBtn" >Analyze</button>
+	  <button id="settingBtn" >Settings</button>
 	 </div>
 
 	 <div class= "content">
-	 	
+	 
 	 	<div id="historyPanel" class="panel active">
 			<h2>History</h2>
 			<p>This will show past errors.</p>
 		</div>
 
+
 	 	<div id="analyzePanel" class="panel">
-			<h2>Analyze</h2>
-			<p>Paste a stack trace here</p>
+			<h2>Stack Trace</h2>
+			<textarea id= "stackTraceInput" placeholder="Please paste your stack trace message here"></textarea>
+
+			<h3>Language</h3>
+		  <select id ="languageSelect">
+			<option>Javascript</option>
+			<option>Python</option>
+			<option>Java</option>
+			<option>C++</option>
+			<option>Typescript</option>
+		  </select>
+			
+		  	<button id="runAnalyzeBtn">Analyze</button>
+
+			<div id="loadingBuffer" class="hidden">
+				  <p>Analyzing... Please wait ⏳</p>
+			</div>			
+
+			<div id="aiResponseBox" class="hidden">
+				<h3>AI Response Box</h3>
+				
+				<div id="innerWrapper">
+					<p><b>What:</b> <span id="aiWhat"></span></p>
+					<p><b>Why:</b> <span id="aiwhy"></span></p>
+					<p><b>Where:</b> <span id="aiWhere"></span></p>
+				</div>
+			 
+			</div>
+
 		</div>		
 
 	 	<div id="settingsPanel" class="panel">

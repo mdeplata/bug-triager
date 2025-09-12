@@ -1,3 +1,7 @@
+// =====================
+// Sidebar Navigation
+// =====================
+
 const historyBtn = document.getElementById("historyBtn");
 const analyzeBtn = document.getElementById("analyzeBtn");
 const settingsBtn = document.getElementById("settingBtn");
@@ -33,3 +37,35 @@ settingsBtn.addEventListener('click', () => {
   historyBtn.classList.remove('active');
   analyzeBtn.classList.remove('active');
 });
+
+
+// =====================
+// Analyze Panel Logic
+// =====================
+
+const runAnalyzeBtn = document.getElementById("runAnalyzeBtn")
+const loadingBuffer = document.getElementById("loadingBuffer")
+const aiResponseBox = document.getElementById("aiResponseBox")
+const aiInnerBox = document.getElementById("innerWrapper")
+const aiWhat = document.getElementById("aiWhat")
+const aiWhy = document.getElementById("aiWhy")
+const aiWhere = document.getElementById("aiWhere")
+
+runAnalyzeBtn.addEventListener("click",()=>{
+
+  // show a buffer message 
+  loadingBuffer.classList.remove("hidden")
+  aiResponseBox.classList.add("hidden")
+
+
+  //simulate  delay
+  setTimeout(()=>{
+  // show response box
+  aiResponseBox.classList.remove("hidden");
+  loadingBuffer.classList.add("hidden")
+
+  },6000);
+
+
+
+})
