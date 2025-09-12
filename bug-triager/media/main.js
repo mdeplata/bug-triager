@@ -10,8 +10,6 @@ const historyPanel = document.getElementById("historyPanel");
 const analyzePanel = document.getElementById("analyzePanel");
 const settingsPanel = document.getElementById("settingsPanel");
 
-
-
 function showPanel(panel){
     historyPanel.classList.remove("active");
     analyzePanel.classList.remove("active");
@@ -41,12 +39,9 @@ settingsBtn.addEventListener('click', () => {
 });
 
 
-
-
 // =====================
 // Analyze Panel Logic
 // =====================
-
 
 const runAnalyzeBtn = document.getElementById("runAnalyzeBtn")
 const loadingBuffer = document.getElementById("loadingBuffer")
@@ -60,7 +55,8 @@ runAnalyzeBtn.addEventListener("click",()=>{
 
   // show a buffer message 
   loadingBuffer.classList.remove("hidden")
-  
+  aiResponseBox.classList.add("hidden")
+
 
   //simulate  delay
   setTimeout(()=>{

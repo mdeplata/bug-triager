@@ -49,9 +49,8 @@ body{
 /* ANALYZE PANEL  */
 
 #analyzePanel{
-    display: flex;
     flex-direction: column;
-    gap:5px;
+    gap:2px;
     color: #f8f7f7;
     padding-left: 10px;
 }
@@ -60,6 +59,7 @@ body{
     font-size: 50px;
     font-weight: 500;
     color: #4d6080;
+    margin-bottom: 10px;
 
 }
 #analyzePanel textarea{
@@ -71,7 +71,6 @@ body{
     border-radius: 4px;
     padding: 15px;
     outline: #163067;
-    margin-top: -35px;
 
 }
 
@@ -79,6 +78,7 @@ body{
     font-size :35px;
     font-weight: 500;
     color: #92989d;
+    margin-bottom: 8px
 }
 
 #analyzePanel select{
@@ -91,7 +91,7 @@ body{
     font-size: 15px;
     background: #1a2434;
     cursor: pointer;
-    margin-top: -35px;
+    display: block;
 }
 
 #analyzePanel button{
@@ -102,6 +102,7 @@ body{
     border-radius: 6px;
     cursor: pointer;
     font-size: 20px;
+    font-weight: 400;
     margin-top: 45px;
 } 
 #analyzePanel button:hover{

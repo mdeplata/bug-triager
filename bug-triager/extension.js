@@ -66,8 +66,8 @@ function activate(context) {
 	 <div class="sidebar">
 	  <h2>DASHBOARD</h2>
 	  <button id="historyBtn" class="active">History</button>
-	  <button id="analyzeBtn">Analyze</button>
-	  <button id="settingBtn">Settings</button>
+	  <button id="analyzeBtn" >Analyze</button>
+	  <button id="settingBtn" >Settings</button>
 	 </div>
 
 	 <div class= "content">
