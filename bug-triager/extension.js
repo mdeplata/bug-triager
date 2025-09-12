@@ -91,12 +91,16 @@ function activate(context) {
 			<option>Typescript</option>
 		  </select>
 			
-		  	<button id="analyzeBtn">Analyze</button>
+		  	<button id="runAnalyzeBtn">Analyze</button>
+
+			<div id="loadingBuffer" class="hidden">
+				  <p>Analyzing... Please wait ⏳</p>
+			</div>			
 
 			<div id="aiResponseBox" class="hidden">
 				<h3>AI Response Box</h3>
 				
-				<div class="innerWrapper">
+				<div id="innerWrapper">
 					<p><b>What:</b> <span id="aiWhat"></span></p>
 					<p><b>Why:</b> <span id="aiwhy"></span></p>
 					<p><b>Where:</b> <span id="aiWhere"></span></p>
