@@ -97,9 +97,9 @@ function activate(context) {
 				<h3>AI Response Box</h3>
 				
 				<div class="innerWrapper">
-					<p><b>What:</b> <span id="aiWhat">....</span></p>
-					<p><b>Why:</b> <span id="aiwhy">....</span></p>
-					<p><b>Where:</b> <span id="aiWhere">....</span></p>
+					<p><b>What:</b> <span id="aiWhat"></span></p>
+					<p><b>Why:</b> <span id="aiwhy"></span></p>
+					<p><b>Where:</b> <span id="aiWhere"></span></p>
 				</div>
 			 
 			</div>
