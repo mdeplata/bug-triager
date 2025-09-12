@@ -112,8 +112,48 @@ function activate(context) {
 
 	 	<div id="settingsPanel" class="panel">
 			<h2>Settings</h2>
-			<p>settings Config</p>
-		</div>		
+
+			<div class="setting-item">
+				<label for="themeSelect">Theme</label>
+				<select id = "themeSelect">
+					<option>Dark</option>
+					<option>Light</option>
+				</select>
+			</div>
+
+			<div class="setting-item">
+				<label for= "languageSelect">Language</label>
+				<select id="languageSelect">
+					<option>English</option>
+					<option>Spanish</option>
+					<option>French</option>
+					<option>German</option>
+				</select>
+			</div>
+
+			<div class= "setting-item">
+				<label for= "errorMonitoring">Enable Error Monitoring</label>
+				<p class="toggle">
+					<span class="knob"></span>
+				</p>
+			</div>
+
+			<div class= "setting-item">
+				<label for= "autoStackTrace">Auto-Submit Stack Traces</label>
+				<p class="toggle">
+					<span class="knob"></span>
+				</p>
+			</div>
+
+			<div class= "setting-item">
+				<label for= "notifications">Enable Notification</label>
+				<p class="toggle">
+					<span class="knob"></span>
+				</p>
+			</div>
+
+		</div>	
+
 	 </div>
 
  	 <script src="${scriptUri}"></script> 
