@@ -133,6 +133,57 @@ body{
 
 }
 
+/* SETTING PANEL  */
+
+#settingsPanel{
+    color: #e3e8ee;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+#settingsPanel h2{
+    font-size: 28px;
+    font-weight: 600;
+    color: #4d6080;
+    margin-bottom: 10px;
+
+}
+
+.setting-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 16px;
+    
+}
+
+.setting-item label {
+  color: #c2c8d0;
+  font-size: 15px;
+}
+
+
+.toggle {
+  width: 60px;
+  height: 30px;
+  background: #444;    
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle .knob {
+  width: 26px;
+  height: 26px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
 
 
 
