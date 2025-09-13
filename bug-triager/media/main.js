@@ -65,7 +65,17 @@ runAnalyzeBtn.addEventListener("click",()=>{
   loadingBuffer.classList.add("hidden")
 
   },6000);
-
-
-
 })
+
+
+// =====================
+// Settings Panel Logic
+// =====================
+
+const settingToggle = document.querySelectorAll(".toggle")
+
+settingToggle.forEach(eachToggle =>{
+  eachToggle.addEventListener("click",()=>{
+    eachToggle.classList.toggle("on");
+  });
+});

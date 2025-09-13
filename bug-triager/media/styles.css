@@ -75,7 +75,7 @@ body{
 }
 
 #analyzePanel h3{
-    font-size :35px;
+    font-size :32px;
     font-weight: 500;
     color: #92989d;
     margin-bottom: 8px
@@ -102,8 +102,8 @@ body{
     border-radius: 6px;
     cursor: pointer;
     font-size: 20px;
-    font-weight: 400;
-    margin-top: 45px;
+    font-weight: 500;
+    margin-top: 60px;
 } 
 #analyzePanel button:hover{
     background: #0a2334;
@@ -191,7 +191,7 @@ body{
 
 .setting-item-toggle label{
     display: inline-block;
-    width:45%;
+    width:50%;
     font-size: 16px;
     color: #92989d;
     font-weight: 500;
@@ -216,6 +216,15 @@ body{
   left: 2px;
 }
 
+
+.toggle.on {
+    background-color: #2d6cdf;
+}
+
+.toggle.on .knob{
+    transform:translateX(30px);
+    background: #fff;
+}
 
 
 
