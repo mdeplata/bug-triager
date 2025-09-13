@@ -131,21 +131,21 @@ function activate(context) {
 				</select>
 			</div>
 
-			<div class= "setting-item">
+			<div class= "setting-item-toggle">
 				<label for= "errorMonitoring">Enable Error Monitoring</label>
 				<p class="toggle">
 					<span class="knob"></span>
 				</p>
 			</div>
 
-			<div class= "setting-item">
+			<div class= "setting-item-toggle">
 				<label for= "autoStackTrace">Auto-Submit Stack Traces</label>
 				<p class="toggle">
 					<span class="knob"></span>
 				</p>
 			</div>
 
-			<div class= "setting-item">
+			<div class= "setting-item-toggle">
 				<label for= "notifications">Enable Notification</label>
 				<p class="toggle">
 					<span class="knob"></span>
