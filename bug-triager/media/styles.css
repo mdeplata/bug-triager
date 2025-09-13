@@ -1,9 +1,41 @@
+:root {
+  /* dark mode */
+  --bg-color:#1e1e1e;
+  --text-color: #92989d;
+  --heading-color: #4d6080;
+  --button-bg: #106095;
+  --button-hover-bg: #0a2334;
+  --button-text: #1a2434;
+  --analyze-bg-box: #262d26;
+  --response-text: #d1dbe3;
+  --response-bg: #1a2434;
+  --select-text:#92989d;
+  --select-bg:#1a2434;
+
+}
+
+.light-theme {
+  --bg-color: #cdd1d6;
+  --text-color: #2a1b75;
+  --heading-color: #202c40;
+  --button-hover-bg: #2d6cdf;
+  --button-bg: #163067;
+  --button-text: #ffffff;
+  --response-text: #202c40;
+  --response-bg: #edebeb;
+  --analyze-bg-box:#90a2cb;
+  --select-bg:#7e858a;
+  --select-text:#202c40;
+
+
+}
+
 body{
     margin:0;
     font-family: sans-serif;
     display: flex;
     height: 140vh;
-    background: #1e1e1e;
+    background: var(--bg-color);
 }
 
 /* SIDEBAR */
@@ -57,8 +89,8 @@ body{
 
 #analyzePanel h2{
     font-size: 50px;
-    font-weight: 500;
-    color: #4d6080;
+    font-weight: 600;
+    color: var(--heading-color);
     margin-bottom: 10px;
 
 }
@@ -66,7 +98,7 @@ body{
     width: 55%;
     height: 200px;
     font-family: monospace;
-    background: #262d26;
+    background:var(--analyze-bg-box);
     color: #d7382e;
     border-radius: 4px;
     padding: 15px;
@@ -75,39 +107,42 @@ body{
 }
 
 #analyzePanel h3{
-    font-size :35px;
+    font-size :32px;
     font-weight: 500;
-    color: #92989d;
+    color: var(--text-color);
     margin-bottom: 8px
 }
 
 #analyzePanel select{
     width: 24%;
     padding: 14px;
-    background: #1e1e1e;
-    color:#92989d;
+    color:var(--select-text);
     border: 1px solid #555;
     border-radius: 4px;
     font-size: 15px;
-    background: #1a2434;
+    background:var(--select-bg);
     cursor: pointer;
     display: block;
+}
+
+#aiResponseBox h3{
+    color: var(--text-color);
 }
 
 #analyzePanel button{
     width: 58%;
     padding: 15px;
-    background: #106095;
-    color: #1a2434;
+    background: var(--button-bg);
+    color: var(--button-text);
     border-radius: 6px;
     cursor: pointer;
     font-size: 20px;
-    font-weight: 400;
-    margin-top: 45px;
+    font-weight: 500;
+    margin-top: 60px;
 } 
 #analyzePanel button:hover{
-    background: #0a2334;
-    color:#d1dbe3
+    background: var(--button-hover-bg);
+    color:var(--response-text);
 }
 
 
@@ -117,7 +152,7 @@ body{
 
 
 #innerWrapper {
-    background: #1a2434;
+    background: var(--response-bg);
     border: 5px solid rgba(122, 123, 116, 0.2);
     border-radius: 4px;
     padding: 15px;
@@ -133,7 +168,97 @@ body{
 
 }
 
+/* SETTING PANEL  */
 
+#settingsPanel{
+    color: #e3e8ee;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+#settingsPanel h2{
+    font-size: 31px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    padding-left: 16px;
+
+}
+
+.setting-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 16px;
+    margin-top: 10px;
+    
+}
+
+.setting-item label {
+  font-size: 20px;
+  color: #92989d;
+  margin-bottom: 10px;
+}
+
+.setting-item select{
+    width: 70%;
+    padding: 14px;
+    color:var(--select-text);
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--select-bg);
+    cursor: pointer;
+    display: block;
+}
+
+.setting-item-toggle{
+    display: flex;
+    margin-top: 18px;
+    padding-left: 16px;
+    flex-direction:row;
+    align-items: center;
+}
+
+.setting-item-toggle label{
+    display: inline-block;
+    width:50%;
+    font-size: 16px;
+    color: #92989d;
+    font-weight: 500;
+}
+
+.toggle {
+  width: 60px;
+  height: 30px;
+  background: #444;    
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle .knob {
+  width: 26px;
+  height: 26px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+
+.toggle.on {
+    background-color: #2d6cdf;
+}
+
+.toggle.on .knob{
+    transform:translateX(30px);
+    background: #fff;
+}
 
 
 

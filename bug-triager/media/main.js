@@ -65,7 +65,26 @@ runAnalyzeBtn.addEventListener("click",()=>{
   loadingBuffer.classList.add("hidden")
 
   },6000);
+})
 
 
+// =====================
+// Settings Panel Logic
+// =====================
 
+const settingToggle = document.querySelectorAll(".toggle");
+const lightDarkMode  = document.getElementById("themeSelect");
+
+settingToggle.forEach(eachToggle =>{
+  eachToggle.addEventListener("click",()=>{
+    eachToggle.classList.toggle("on");
+  });
+});
+
+lightDarkMode.addEventListener("click",()=>{
+  if(lightDarkMode.value == "light"){
+    document.body.classList.add("light-theme");
+  }else{
+    document.body.classList.remove("light-theme");
+  }
 })
