@@ -116,18 +116,18 @@ function activate(context) {
 			<div class="setting-item">
 				<label for="themeSelect">Theme</label>
 				<select id = "themeSelect">
-					<option>Dark</option>
-					<option>Light</option>
+					<option value="dark">Dark</option>
+					<option value="light">Light</option>
 				</select>
 			</div>
 
 			<div class="setting-item">
 				<label for= "languageSelect">Language</label>
 				<select id="languageSelect">
-					<option>English</option>
-					<option>Spanish</option>
-					<option>French</option>
-					<option>German</option>
+					<option value = "English">English</option>
+					<option value = "Spanish">Spanish</option>
+					<option value = "French">French</option>
+					<option value = "German">German</option>
 				</select>
 			</div>
 

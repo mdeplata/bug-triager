@@ -6,8 +6,28 @@
   --button-bg: #106095;
   --button-hover-bg: #0a2334;
   --button-text: #1a2434;
+  --analyze-bg-box: #262d26;
   --response-text: #d1dbe3;
   --response-bg: #1a2434;
+  --select-text:#92989d;
+  --select-bg:#1a2434;
+
+}
+
+.light-theme {
+  --bg-color: #cdd1d6;
+  --text-color: #2a1b75;
+  --heading-color: #202c40;
+  --button-hover-bg: #2d6cdf;
+  --button-bg: #163067;
+  --button-text: #ffffff;
+  --response-text: #202c40;
+  --response-bg: #edebeb;
+  --analyze-bg-box:#90a2cb;
+  --select-bg:#7e858a;
+  --select-text:#202c40;
+
+
 }
 
 body{
@@ -69,7 +89,7 @@ body{
 
 #analyzePanel h2{
     font-size: 50px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--heading-color);
     margin-bottom: 10px;
 
@@ -78,7 +98,7 @@ body{
     width: 55%;
     height: 200px;
     font-family: monospace;
-    background: #262d26;
+    background:var(--analyze-bg-box);
     color: #d7382e;
     border-radius: 4px;
     padding: 15px;
@@ -96,11 +116,11 @@ body{
 #analyzePanel select{
     width: 24%;
     padding: 14px;
-    color:#92989d;
+    color:var(--select-text);
     border: 1px solid #555;
     border-radius: 4px;
     font-size: 15px;
-    background: #1a2434;
+    background:var(--select-bg);
     cursor: pointer;
     display: block;
 }
@@ -185,12 +205,12 @@ body{
 .setting-item select{
     width: 70%;
     padding: 14px;
-    color:#92989d;
+    color:var(--select-text);
     border: 1px solid #555;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
-    background: #1a2434;
+    background: var(--select-bg);
     cursor: pointer;
     display: block;
 }
