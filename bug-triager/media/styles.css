@@ -144,13 +144,9 @@ body{
     background: var(--button-hover-bg);
     color:var(--response-text);
 }
-
-
 .hidden{
     display: none;
 }
-
-
 #innerWrapper {
     background: var(--response-bg);
     border: 5px solid rgba(122, 123, 116, 0.2);
