@@ -75,16 +75,45 @@ function activate(context) {
 	 	<div id="historyPanel" class="panel active">
 			<h2>History</h2>
 			
-			<div class="history-card">
+			<div class="history-card ">
 				<p class="error"><strong>TypeError:</strong>Cannot read property</p>
 				<p class="file">src/component/App.js:28</p>
-				<p class= "time">17 min ago</p>
-
-				<div class="history-aiResponse>
-					<p><b>What:</b>The variable "foo" is undefined</p>
-					<p><b>Why:</b>Called before initalization or passed incorrectly </p>
-					<p><b>Where:</b>Check App.js line 28 where "foo" is first used </p>
+				
+				<div class="history-aiResponse" >
+				<p><b>What:</b>The variable "foo" is undefined</p>
+				<p><b>Why:</b>Called before initalization or passed incorrectly </p>
+				<p><b>Where:</b>Check App.js line 28 where "foo" is first used </p>
 				</div>
+
+				<p class= "time">17 min ago</p>
+			</div>
+
+						
+			<div class="history-card ">
+				<p class="error"><strong>TypeError:</strong>Cannot read property</p>
+				<p class="file">src/component/App.js:28</p>
+				
+				<div class="history-aiResponse" >
+				<p><b>What:</b>The variable "foo" is undefined</p>
+				<p><b>Why:</b>Called before initalization or passed incorrectly </p>
+				<p><b>Where:</b>Check App.js line 28 where "foo" is first used </p>
+				</div>
+
+				<p class= "time">17 min ago</p>
+			</div>
+
+						
+			<div class="history-card ">
+				<p class="error"><strong>TypeError:</strong>Cannot read property</p>
+				<p class="file">src/component/App.js:28</p>
+				
+				<div class="history-aiResponse" >
+				<p><b>What:</b>The variable "foo" is undefined</p>
+				<p><b>Why:</b>Called before initalization or passed incorrectly </p>
+				<p><b>Where:</b>Check App.js line 28 where "foo" is first used </p>
+				</div>
+
+				<p class= "time">17 min ago</p>
 			</div>
 		</div>
 
