@@ -261,8 +261,7 @@ body{
 #historyPanel{
     color:#e3e8ee;
     flex-direction: column;
-    gap:16px;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 #historyPanel h2{
@@ -270,6 +269,7 @@ body{
     font-weight: 600;
     color: var(--heading-color);
     margin-bottom: 15px;
+    padding-left: 10px;
 }
 
 /* base card  */
@@ -279,7 +279,7 @@ body{
     border-radius: 6px;
     padding: 16px;
     margin: 10px 4px;
-    width: 80%;
+    width: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);

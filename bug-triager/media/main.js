@@ -88,3 +88,22 @@ lightDarkMode.addEventListener("click",()=>{
     document.body.classList.remove("light-theme");
   }
 })
+
+// =====================
+// Histoey  Panel Logic
+// =====================
+
+const historyCards = document.querySelectorAll(".history-card");
+
+historyCards.forEach(card=>{
+  card.addEventListener("click",()=>{
+    if(card.classList.contains("active")){
+      card.classList.remove("active")
+    }
+    else{
+      historyCards.forEach(c=>c.classList.remove("active"))
+      
+      card.classList.add("active")
+    }
+  })
+})
