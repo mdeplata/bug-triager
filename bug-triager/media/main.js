@@ -47,9 +47,9 @@ const runAnalyzeBtn = document.getElementById("runAnalyzeBtn")
 const loadingBuffer = document.getElementById("loadingBuffer")
 const aiResponseBox = document.getElementById("aiResponseBox")
 const aiInnerBox = document.getElementById("innerWrapper")
-const aiWhat = document.getElementById("aiWhat")
-const aiWhy = document.getElementById("aiWhy")
-const aiWhere = document.getElementById("aiWhere")
+const aiProblem = document.getElementById("aiProblem");
+const aiReason = document.getElementById("aiReason");
+const aiSolution = document.getElementById("aiSolution");
 
 runAnalyzeBtn.addEventListener("click",()=>{
 
