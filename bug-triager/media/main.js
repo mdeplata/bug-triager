@@ -47,9 +47,9 @@ const runAnalyzeBtn = document.getElementById("runAnalyzeBtn")
 const loadingBuffer = document.getElementById("loadingBuffer")
 const aiResponseBox = document.getElementById("aiResponseBox")
 const aiInnerBox = document.getElementById("innerWrapper")
-const aiWhat = document.getElementById("aiWhat")
-const aiWhy = document.getElementById("aiWhy")
-const aiWhere = document.getElementById("aiWhere")
+const aiProblem = document.getElementById("aiProblem");
+const aiReason = document.getElementById("aiReason");
+const aiSolution = document.getElementById("aiSolution");
 
 runAnalyzeBtn.addEventListener("click",()=>{
 
@@ -87,4 +87,23 @@ lightDarkMode.addEventListener("click",()=>{
   }else{
     document.body.classList.remove("light-theme");
   }
+})
+
+// =====================
+// Histoey  Panel Logic
+// =====================
+
+const historyCards = document.querySelectorAll(".history-card");
+
+historyCards.forEach(card=>{
+  card.addEventListener("click",()=>{
+    if(card.classList.contains("active")){
+      card.classList.remove("active")
+    }
+    else{
+      historyCards.forEach(c=>c.classList.remove("active"))
+      
+      card.classList.add("active")
+    }
+  })
 })

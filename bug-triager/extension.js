@@ -74,7 +74,47 @@ function activate(context) {
 	 
 	 	<div id="historyPanel" class="panel active">
 			<h2>History</h2>
-			<p>This will show past errors.</p>
+			
+			<div class="history-card ">
+				<p class="error"><strong>TypeError:</strong>Cannot read property</p>
+				<p class="file">src/component/App.js:28</p>
+				
+				<div class="history-aiResponse" >
+					<p><b>Problem:</b> <span id="aiProblem"></span></p>
+					<p><b>Reason:</b> <span id="aiReason"></span></p>
+					<p><b>Solution:</b> <span id="aiSolution"></span></p>
+				</div>
+
+				<p class= "time">17 min ago</p>
+			</div>
+
+						
+			<div class="history-card ">
+				<p class="error"><strong>TypeError:</strong>Cannot read property</p>
+				<p class="file">src/component/App.js:28</p>
+				
+				<div class="history-aiResponse" >
+					<p><b>Problem:</b> <span id="aiProblem"></span></p>
+					<p><b>Reason:</b> <span id="aiReason"></span></p>
+					<p><b>Solution:</b> <span id="aiSolution"></span></p>
+				</div>
+
+				<p class= "time">17 min ago</p>
+			</div>
+
+						
+			<div class="history-card ">
+				<p class="error"><strong>TypeError:</strong>Cannot read property</p>
+				<p class="file">src/component/App.js:28</p>
+				
+				<div class="history-aiResponse" >
+					<p><b>Problem:</b> <span id="aiProblem"></span></p>
+					<p><b>Reason:</b> <span id="aiReason"></span></p>
+					<p><b>Solution:</b> <span id="aiSolution"></span></p>
+				</div>
+
+				<p class= "time">17 min ago</p>
+			</div>
 		</div>
 
 
@@ -101,9 +141,9 @@ function activate(context) {
 				<h3>AI Response Box</h3>
 				
 				<div id="innerWrapper">
-					<p><b>What:</b> <span id="aiWhat"></span></p>
-					<p><b>Why:</b> <span id="aiwhy"></span></p>
-					<p><b>Where:</b> <span id="aiWhere"></span></p>
+					<p><b>Problem:</b> <span id="aiProblem"></span></p>
+					<p><b>Reason:</b> <span id="aiReason"></span></p>
+					<p><b>Solution:</b> <span id="aiSolution"></span></p>
 				</div>
 			 
 			</div>

@@ -1,0 +1,44 @@
+ [
+  {
+    "error": "TypeError: Cannot read property 'foo' of undefined",
+    "file": "src/components/App.js:28",
+    "time": "17 minutes ago",
+    "aiResponse": {
+      "what": "The variable 'foo' is undefined.",
+      "why": "Likely called before initialization or passed incorrectly.",
+      "where": "Check App.js line 28 where 'foo' is first used."
+    }
+  },
+  {
+    "error": "NameError: name 'datal' is not defined",
+    "file": "main.py:14",
+    "time": "2 hours ago",
+    "aiResponse": {
+      "what": "'datal' is not recognized as a variable.",
+      "why": "You probably meant 'data'.",
+      "where": "Check main.py line 14."
+    }
+  },
+  {
+    "error": "TypeError: Cannot read property 'foo' of undefined",
+    "file": "src/components/App.js:28",
+    "time": "17 minutes ago",
+    "aiResponse": {
+      "what": "The variable 'foo' is undefined.",
+      "why": "Likely called before initialization or passed incorrectly.",
+      "where": "Check App.js line 28 where 'foo' is first used."
+    }
+  },
+  {
+    "error": "NameError: name 'datal' is not defined",
+    "file": "main.py:14",
+    "time": "2 hours ago",
+    "aiResponse": {
+      "what": "'datal' is not recognized as a variable.",
+      "why": "You probably meant 'data'.",
+      "where": "Check main.py line 14."
+    }
+  }
+  
+]
+
