@@ -1,4 +1,9 @@
 // =====================
+// VSCode API Import
+// =====================
+const vscode = acquireVsCodeApi();
+
+// =====================
 // Sidebar Navigation
 // =====================
 
@@ -47,26 +52,36 @@ const runAnalyzeBtn = document.getElementById("runAnalyzeBtn")
 const loadingBuffer = document.getElementById("loadingBuffer")
 const aiResponseBox = document.getElementById("aiResponseBox")
 const aiInnerBox = document.getElementById("innerWrapper")
-const aiProblem = document.getElementById("aiProblem");
-const aiReason = document.getElementById("aiReason");
-const aiSolution = document.getElementById("aiSolution");
+const aiProblem = document.getElementById("analysisProblem");
+const aiReason = document.getElementById("analysisReason");
+const aiSolution = document.getElementById("analysisSolution");
 
-runAnalyzeBtn.addEventListener("click",()=>{
+runAnalyzeBtn.addEventListener("click",async () => {
 
   // show a buffer message 
   loadingBuffer.classList.remove("hidden")
   aiResponseBox.classList.add("hidden")
 
-
-  //simulate  delay
-  setTimeout(()=>{
-  // show response box
-  aiResponseBox.classList.remove("hidden");
-  loadingBuffer.classList.add("hidden")
-
-  },6000);
+  // post a command message to the vscode extension to start LLM Analysis
+  vscode.postMessage({
+    command: 'analyze',
+    text: document.getElementById('stackTraceInput').value
+  })
 })
 
+window.addEventListener('message', event => {
+  const message = event.data;
+  if (message.command === 'analysisResult') {
+
+    loadingBuffer.classList.add('hidden');
+    aiResponseBox.classList.remove('hidden');
+
+    aiProblem.textContent = message.problem;
+    aiReason.textContent = message.reason;
+    aiSolution.textContent = message.solution;
+
+  }
+})
 
 // =====================
 // Settings Panel Logic
