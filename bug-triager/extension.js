@@ -4,6 +4,7 @@ const vscode = require('vscode');
 const path = require('path');
 const OpenAI = require('openai');
 const dotenv = require('dotenv');
+const fs = require('fs');
 
 dotenv.config({ path: path.join(__dirname, '.env')});
 
@@ -63,17 +64,46 @@ function activate(context) {
 							model: 'gpt-5',
 							messages: [
 								{ role: 'system', content: 'You are a helpful assistant that helps developers triage bugs.' },
-								{ role: 'user', content: `Analyze the following stack trace and provide a brief explanation of what and where the problem is, why it might be occurring, and a solution for resolving the error:\n\n${message.text}.
-								Answer using the format "Problem: ...\nReason: ...\nSolution: ...\n". For all of the sections, please do not use a list and keep the response to one line.` }
+								{ role: 'user', content: `Analyze the following stack trace and provide the error type, the file path, and brief explanations of what and where the problem is, why it might be occurring, and a solution for resolving the error:\n\n${message.text}.
+								Answer using the format "Error Type: ...\nFile Path: ...\nProblem: ...\nReason: ...\nSolution: ...\n". For the Problem, Reason, and Solution sections, please do not use a list and keep the response to one line.` }
 							]
 						});
+						
+						console.log(response.choices[0].message.content)
+
+						resType = response.choices[0].message.content.match(/Error Type: (.*)/)[1]
+						resPath = response.choices[0].message.content.match(/File Path: (.*)/)[1]
+						resProblem = response.choices[0].message.content.match(/Problem: (.*)/)[1]
+						resReason = response.choices[0].message.content.match(/Reason: (.*)/)[1]
+						resSolution = response.choices[0].message.content.match(/Solution: (.*)/)[1]
 
 						panel.webview.postMessage({
 							command: 'analysisResult',
-							problem: response.choices[0].message.content.match(/Problem: (.*)/)[1],
-							reason: response.choices[0].message.content.match(/Reason: (.*)/)[1],
-							solution: response.choices[0].message.content.match(/Solution: (.*)/)[1]
+							problem: resProblem,
+							reason: resReason,
+							solution: resSolution
 						});
+
+						let rawData = fs.readFileSync(path.join(__dirname, './media/historyData.json'))
+						
+						let jsonData = JSON.parse(rawData)
+
+						let newData = {
+							error: resType,
+							file: resPath,
+							time: new Date(),
+							aiResponse: {
+								problem: resProblem,
+								reason: resReason,
+								solution: resSolution
+							}
+						}
+
+						jsonData.push(newData)
+
+						let updatedData = JSON.stringify(jsonData, null, 2)
+
+						fs.writeFileSync(path.join(__dirname, './media/historyData.json'), updatedData)
 						
 					} catch (error) {
 						console.error('Error during analysis:', error);
