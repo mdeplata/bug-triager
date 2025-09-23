@@ -4,9 +4,9 @@
     "file": "src/components/App.js:28",
     "time": "17 minutes ago",
     "aiResponse": {
-      "what": "The variable 'foo' is undefined.",
-      "why": "Likely called before initialization or passed incorrectly.",
-      "where": "Check App.js line 28 where 'foo' is first used."
+      "problem": "The variable 'foo' is undefined.",
+      "reason": "Likely called before initialization or passed incorrectly.",
+      "solution": "Check App.js line 28 solution 'foo' is first used."
     }
   },
   {
@@ -14,9 +14,9 @@
     "file": "main.py:14",
     "time": "2 hours ago",
     "aiResponse": {
-      "what": "'datal' is not recognized as a variable.",
-      "why": "You probably meant 'data'.",
-      "where": "Check main.py line 14."
+      "problem": "'datal' is not recognized as a variable.",
+      "reason": "You probably meant 'data'.",
+      "solution": "Check main.py line 14."
     }
   },
   {
@@ -24,9 +24,9 @@
     "file": "src/components/App.js:28",
     "time": "17 minutes ago",
     "aiResponse": {
-      "what": "The variable 'foo' is undefined.",
-      "why": "Likely called before initialization or passed incorrectly.",
-      "where": "Check App.js line 28 where 'foo' is first used."
+      "problem": "The variable 'foo' is undefined.",
+      "reason": "Likely called before initialization or passed incorrectly.",
+      "solution": "Check App.js line 28 solution 'foo' is first used."
     }
   },
   {
@@ -34,11 +34,10 @@
     "file": "main.py:14",
     "time": "2 hours ago",
     "aiResponse": {
-      "what": "'datal' is not recognized as a variable.",
-      "why": "You probably meant 'data'.",
-      "where": "Check main.py line 14."
+      "problem": "'datal' is not recognized as a variable.",
+      "reason": "You probably meant 'data'.",
+      "solution": "Check main.py line 14."
     }
   }
   
 ]
-

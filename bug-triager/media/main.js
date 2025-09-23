@@ -23,6 +23,15 @@ function showPanel(panel){
 }
 
 historyBtn.addEventListener('click',()=>{
+
+    while (historyPanel.lastChild.nodeName != 'H2') {
+      historyPanel.removeChild(historyPanel.lastChild)
+    }
+
+    vscode.postMessage({
+      command: 'getHistoryData'
+    });
+
     showPanel(historyPanel);
     historyBtn.classList.add("active")
     analyzeBtn.classList.remove("active")
@@ -80,7 +89,10 @@ window.addEventListener('message', event => {
     aiReason.textContent = message.reason;
     aiSolution.textContent = message.solution;
 
+  } else if (message.command === 'historyData') {
+    renderHistoryCards(message.jsonData);
   }
+
 })
 
 // =====================
@@ -122,3 +134,76 @@ historyCards.forEach(card=>{
     }
   })
 })
+
+function renderHistoryCards(jsonData) {
+
+  for (let json of jsonData) {
+      let newHistoryCard = document.createElement('div');
+      newHistoryCard.classList.add('history-card');
+
+      let errorP = document.createElement('p');
+      errorP.classList.add('error');
+      errorP.textContent = json.error;
+
+      newHistoryCard.appendChild(errorP)
+
+      let fileP = document.createElement('p');
+      fileP.classList.add('file');
+      fileP.textContent = json.file;
+
+      newHistoryCard.appendChild(fileP);
+
+      let aiResponseDiv = document.createElement('div');
+      aiResponseDiv.classList.add('history-aiResponse');
+
+      let aiProblem = document.createElement('p');
+
+      let problemBold = document.createElement('b');
+      problemBold.textContent = 'Problem:';
+
+      let problemSpan = document.createElement('span');
+      problemSpan.textContent = json.aiResponse.problem;
+
+      aiProblem.appendChild(problemBold);
+      aiProblem.appendChild(problemSpan);
+
+      aiResponseDiv.appendChild(aiProblem);
+
+      let aiReason = document.createElement('p');
+
+      let reasonBold = document.createElement('b');
+      reasonBold.textContent = 'Reason:';
+
+      let reasonSpan = document.createElement('span');
+      reasonSpan.textContent = json.aiResponse.reason;
+
+      aiReason.appendChild(reasonBold);
+      aiReason.appendChild(reasonSpan);
+
+      aiResponseDiv.appendChild(aiReason);
+
+      let aiSolution = document.createElement('p');
+
+      let solutionBold = document.createElement('b');
+      solutionBold.textContent = 'Solution:';
+
+      let solutionSpan = document.createElement('span');
+      solutionSpan.textContent = json.aiResponse.solution;
+
+      aiSolution.appendChild(solutionBold);
+      aiSolution.appendChild(solutionSpan);
+
+      aiResponseDiv.appendChild(aiSolution);
+
+      newHistoryCard.appendChild(aiResponseDiv);
+      
+      let timeP = document.createElement('p');
+      timeP.classList.add('time');
+      timeP.textContent = json.time;
+
+      newHistoryCard.appendChild(timeP);
+
+      historyPanel.appendChild(newHistoryCard);
+    }
+
+}
