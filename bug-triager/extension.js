@@ -53,7 +53,7 @@ function activate(context) {
 			const panel = vscode.window.createWebviewPanel(
 				'bugTriagerDashboard',
 				'Bug Triager Dashboard',
-				vscode.ViewColumn.One,
+				vscode.ViewColumn.Two,
 				{ enableScripts: true }
 			);
 
@@ -68,8 +68,6 @@ function activate(context) {
 								Answer using the format "Error Type: ...\nFile Path: ...\nProblem: ...\nReason: ...\nSolution: ...\n". For the Problem, Reason, and Solution sections, please do not use a list and keep the response to one line.` }
 							]
 						});
-						
-						console.log(response.choices[0].message.content)
 
 						resType = response.choices[0].message.content.match(/Error Type: (.*)/)[1]
 						resPath = response.choices[0].message.content.match(/File Path: (.*)/)[1]
@@ -108,6 +106,14 @@ function activate(context) {
 					} catch (error) {
 						console.error('Error during analysis:', error);
 					}
+				} else if (message.command === 'getHistoryData') {
+					let rawData = fs.readFileSync(path.join(__dirname, './media/historyData.json'))
+					let jsonData = JSON.parse(rawData)
+
+					panel.webview.postMessage({
+						command: 'historyData',
+						jsonData: jsonData
+					})
 				}
 			})
 
@@ -139,14 +145,46 @@ function activate(context) {
   	<body>
 	 <div class="sidebar">
 	  <h2>DASHBOARD</h2>
-	  <button id="historyBtn" class="active">History</button>
-	  <button id="analyzeBtn" >Analyze</button>
+	  <button id="analyzeBtn" class="active">Analyze</button>
+	  <button id="historyBtn" >History</button>
 	  <button id="settingBtn" >Settings</button>
 	 </div>
 
 	 <div class= "content">
 	 
-	 	<div id="historyPanel" class="panel active">
+	 <div id="analyzePanel" class="panel active">
+		<h2>Stack Trace</h2>
+		<textarea id= "stackTraceInput" placeholder="Please paste your stack trace message here"></textarea>
+
+		<h3>Language</h3>
+	  <select id ="languageSelect">
+		<option>Javascript</option>
+		<option>Python</option>
+		<option>Java</option>
+		<option>C++</option>
+		<option>Typescript</option>
+	  </select>
+		
+		  <button id="runAnalyzeBtn">Analyze</button>
+
+		<div id="loadingBuffer" class="hidden">
+			  <p>Analyzing... Please wait ⏳</p>
+		</div>			
+
+		<div id="aiResponseBox" class="hidden">
+			<h3>AI Response Box</h3>
+			
+			<div id="innerWrapper">
+				<p><b>Problem:</b> <span id="analysisProblem"></span></p>
+				<p><b>Reason:</b> <span id="analysisReason"></span></p>
+				<p><b>Solution:</b> <span id="analysisSolution"></span></p>
+			</div>
+		 
+		</div>
+
+	</div>
+
+	 <div id="historyPanel" class="panel">
 			<h2>History</h2>
 			
 			<div class="history-card ">
@@ -192,37 +230,6 @@ function activate(context) {
 		</div>
 
 
-	 	<div id="analyzePanel" class="panel">
-			<h2>Stack Trace</h2>
-			<textarea id= "stackTraceInput" placeholder="Please paste your stack trace message here"></textarea>
-
-			<h3>Language</h3>
-		  <select id ="languageSelect">
-			<option>Javascript</option>
-			<option>Python</option>
-			<option>Java</option>
-			<option>C++</option>
-			<option>Typescript</option>
-		  </select>
-			
-		  	<button id="runAnalyzeBtn">Analyze</button>
-
-			<div id="loadingBuffer" class="hidden">
-				  <p>Analyzing... Please wait ⏳</p>
-			</div>			
-
-			<div id="aiResponseBox" class="hidden">
-				<h3>AI Response Box</h3>
-				
-				<div id="innerWrapper">
-					<p><b>Problem:</b> <span id="analysisProblem"></span></p>
-					<p><b>Reason:</b> <span id="analysisReason"></span></p>
-					<p><b>Solution:</b> <span id="analysisSolution"></span></p>
-				</div>
-			 
-			</div>
-
-		</div>		
 
 	 	<div id="settingsPanel" class="panel">
 			<h2>Settings</h2>
